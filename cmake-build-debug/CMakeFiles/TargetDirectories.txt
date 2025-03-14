@@ -1,0 +1,3 @@
+/Users/fortisvariano/Documents/Data Structures/p2/Labs/8.7.58rewrite/cmake-build-debug/CMakeFiles/8_7_58rewrite.dir
+/Users/fortisvariano/Documents/Data Structures/p2/Labs/8.7.58rewrite/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/fortisvariano/Documents/Data Structures/p2/Labs/8.7.58rewrite/cmake-build-debug/CMakeFiles/rebuild_cache.dir
