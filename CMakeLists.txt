@@ -12,5 +12,9 @@ add_executable(8_7_58rewrite main.cpp
         Parser.h
         PostFix.h
         ExpressionTreePrint.h
+        ExpressionTreePrint.cpp
         ConDec.cpp
+        Parser.cpp
+        PostFix.cpp
+        Expression.cpp
 )
