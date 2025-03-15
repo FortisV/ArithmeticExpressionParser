@@ -2,7 +2,10 @@
 #define INC_8_7_58REWRITE_PARSER_H
 
 
+#include <vector>
+
 #include "Deque.h"
+#include "Expression.h"
 #include "ExpressionNode.h"
 #include "Token.h"
 
@@ -35,13 +38,7 @@ public:
         stack = Deque<ExpressionNode*>();
         variables = std::vector<VariableNode*>();
     }
-    void parse();
-    ExpressionNode* getExpressionTree() {
-        return stack.front();
-    }
-    std::vector<VariableNode*> getVariables() {
-        return variables;
-    }
+    Expression parse();
 };
 
 

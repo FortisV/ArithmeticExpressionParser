@@ -13,6 +13,17 @@ private:
 public:
     DLNode() : prev(nullptr), next(nullptr), data() {}
     DLNode(const DataType& Data) : prev(nullptr), next(nullptr), data(Data) {}
+    DLNode(const DLNode& dlNode) : prev(dlNode.prev), next(dlNode.next), data(dlNode.data) {}
+    DLNode& operator=(const DLNode& dlNode) {
+        if(this != &dlNode) {
+            delete prev;
+            delete next;
+            prev = dlNode.prev;
+            next = dlNode.next;
+            data = dlNode.data;
+        }
+    }
+    ~DLNode() {}
     DataType& Data() {
         return data;
     }
@@ -118,14 +129,10 @@ public:
         }
     }
     DataType front() const {
-        if(!empty()) {
-            return Front->Data();
-        }
+        return Front->Data();
     }
     DataType back() const {
-        if(!empty()) {
-            return Back->Data();
-        }
+        return Back->Data();
     }
 
     std::ostream& print(std::ostream& os = std::cout) const {

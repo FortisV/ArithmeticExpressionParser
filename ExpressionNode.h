@@ -3,9 +3,11 @@
 
 
 #include <iostream>
+#include <cmath>
 
 class ExpressionNode {
 public:
+    virtual ~ExpressionNode() {}
     virtual double getValue() const {
         return 0;
     }
@@ -35,7 +37,7 @@ private:
     double value;
     std::string name;
 public:
-    VariableNode(const std::string& Name) : name(Name) {}
+    VariableNode(const std::string& Name) : value(0), name(Name) {}
     double getValue() const override {
         return value;
     }
@@ -56,13 +58,25 @@ private:
     ExpressionNode* operand;
 public:
     UnaryOperatorNode(const std::string& Operation) : operation(Operation), operand(nullptr) {}
+    UnaryOperatorNode(const UnaryOperatorNode& unaryOperatorNode) : operation(unaryOperatorNode.operation), operand(unaryOperatorNode.operand) {}
+    UnaryOperatorNode& operator=(const UnaryOperatorNode& unaryOperatorNode) {
+        if(this != &unaryOperatorNode) {
+            delete operand;
+            operation = unaryOperatorNode.operation;
+            operand = unaryOperatorNode.operand;
+        }
+        return *this;
+    }
     ~UnaryOperatorNode() {
-        delete operand;
+        if(!dynamic_cast<VariableNode*>(operand)) {
+            delete operand;
+        }
     }
     double getValue() const override {
         if(operation == "-") {
             return -operand->getValue();
         }
+        return 0;
     }
     void set(ExpressionNode* Operand) {
         operand = Operand;
@@ -82,9 +96,24 @@ private:
     ExpressionNode* rOperand;
 public:
     BinaryOperatorNode(const std::string& Operation) : operation(Operation), lOperand(nullptr), rOperand(nullptr) {}
+    BinaryOperatorNode(const BinaryOperatorNode& binaryOperatorNode) : operation(binaryOperatorNode.operation), lOperand(binaryOperatorNode.lOperand), rOperand(binaryOperatorNode.rOperand) {}
+    BinaryOperatorNode& operator=(const BinaryOperatorNode& binaryOperatorNode) {
+        if(this != &binaryOperatorNode) {
+            delete lOperand;
+            delete rOperand;
+            operation = binaryOperatorNode.operation;
+            lOperand = binaryOperatorNode.lOperand;
+            rOperand = binaryOperatorNode.rOperand;
+        }
+        return *this;
+    }
     ~BinaryOperatorNode() {
-        delete lOperand;
-        delete rOperand;
+        if(!dynamic_cast<VariableNode*>(lOperand)) {
+            delete lOperand;
+        }
+        if(!dynamic_cast<VariableNode*>(rOperand)) {
+            delete rOperand;
+        }
     }
     double getValue() const override {
         if(operation == "+") {
@@ -100,6 +129,7 @@ public:
         } else if(operation == "^") {
             return pow(lOperand->getValue(), rOperand->getValue());
         }
+        else return 0;
     }
     void setL(ExpressionNode* LOperand) {
         lOperand = LOperand;

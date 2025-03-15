@@ -3,20 +3,37 @@
 
 
 #include <iostream>
+#include <vector>
 
 #include "Lexer.h"
 #include "Token.h"
 #include "Deque.h"
 #include "ExpressionNode.h"
+#include "ExpressionTreePrint.h"
 
 
 class Expression {
 private:
     std::vector<VariableNode*> variables;
     ExpressionNode* expressionNode;
+    void destructExpressionNode() {
+        for(size_t i = 0; i < variables.size(); ++i) {
+            delete variables[i];
+        }
+        delete expressionNode;
+    }
 public:
     static const size_t npos = -1UL;
-    Expression(ExpressionNode* ExpressionNode, const std::vector<VariableNode*>& Variables) : expressionNode(ExpressionNode), variables(Variables) {}
+    Expression(ExpressionNode* ExpressionNode, const std::vector<VariableNode*>& Variables) : variables(Variables), expressionNode(ExpressionNode) {}
+    Expression(const Expression& expression) : variables(expression.variables), expressionNode(expression.expressionNode) {}
+    Expression& operator=(const Expression& expression) {
+        if(this != &expression) {
+            delete expressionNode;
+            variables = expression.variables;
+            expressionNode = expression.expressionNode;
+        }
+        return *this;
+    }
     ~Expression() {
         delete expressionNode;
     }
@@ -37,6 +54,9 @@ public:
     }
     bool hasVariable(const std::string& name);
     size_t findVariable(const std::string& name);
+    void printTree() {
+        customPrintPreorder(expressionNode, false, "   ", "│  ", "├─>", "└─>");
+    }
 };
 
 

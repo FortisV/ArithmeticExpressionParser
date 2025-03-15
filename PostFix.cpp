@@ -34,6 +34,7 @@ Associativity PostFix::associativity(Token op) {
     } else if(op.getValue() == "^") {
         return RIGHT;
     }
+    return LEFT;
 }
 
 short PostFix::precedence(Token op) {
@@ -50,6 +51,7 @@ short PostFix::precedence(Token op) {
     } else if(op.getValue() == "^") {
         return 3;
     }
+    return 0;
 }
 
 void PostFix::postfix() {

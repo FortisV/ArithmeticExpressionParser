@@ -1,0 +1,17 @@
+--------------------------------------------------------------------------------
+Name       : Fortis Variano
+Course     : CSC216
+Problem #  : 8.7.58
+Title      : Expression Parser
+
+Type       : Lab
+level      : 6.5
+(base)       4
+(addon)      1 - token stream level parser
+(addon)      1.5 - lexer
+
+Type       : Project
+Levels     : 5
+
+Description: Parses.
+--------------------------------------------------------------------------------

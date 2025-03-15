@@ -27,7 +27,7 @@ UnaryOperatorNode *Parser::newUnaryOperatorNode(const Token &bop) {
     return newNode;
 }
 
-void Parser::parse() {
+Expression Parser::parse() {
     while(!postfix.empty()) {
         ExpressionNode* newNode;
         if(numNext()) {
@@ -42,4 +42,5 @@ void Parser::parse() {
         stack.push_back(newNode);
         postfix.pop_front();
     }
+    return {stack.front(), variables};
 }

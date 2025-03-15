@@ -40,7 +40,7 @@ private:
     }
 
     static bool isnumeric(char c) {
-        return isnumber(c) || c == '.';
+        return isdigit(c) || c == '.';
     }
 
     bool done() {
@@ -56,7 +56,11 @@ private:
         return {CONSTANT, str.substr(beg, pos - beg)};
     }
     Token lexPar() {
-        prevOp = false;
+        if(str.substr(pos, 1) == "(") {
+            prevOp = true;
+        } else {
+            prevOp = false;
+        }
         return {PARENTHESES, str.substr(pos++, 1)};
     }
     Token lexOp() {
@@ -78,7 +82,7 @@ private:
     }
 
 public:
-    Lexer(const std::string& Str) : str(Str), pos(0), prevOp(true) {}
+    Lexer(const std::string& Str) : str(Str), pos(0), prevOp(true), tokens() {}
     void reset(const std::string& Str) {
         str = Str;
         pos = 0;
