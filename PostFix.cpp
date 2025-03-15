@@ -41,7 +41,11 @@ short PostFix::precedence(Token op) {
     if(op.getValue() == "+") {
         return 1;
     } else if(op.getValue()== "-") {
-        return 1;
+        if(op.getType() == UNARY_OPERATOR) {
+            return 2;
+        } else {
+            return 1;
+        }
     } else if(op.getValue() == "*") {
         return 2;
     } else if(op.getValue() == "/") {

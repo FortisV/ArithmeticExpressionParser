@@ -78,7 +78,10 @@ int main() {
     banner("Expression Parser");
 
     divider("String Expression");
-    std::string strExpression = randomExpression(3, 5);
+//    std::string strExpression = randomExpression(300, 1000);
+    std::string strExpression = randomExpression(2, 10);
+//    std::string strExpression = "-5^4";
+//    std::string strExpression = "-5*4";
     std::cout << strExpression << '\n';
 
     divider("Tokens");
