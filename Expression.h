@@ -35,22 +35,8 @@ public:
     size_t getVariablesSize() {
         return variables.size();
     }
-    bool hasVariable(const std::string& name) {
-        for(size_t i = 0; i < variables.size(); ++i) {
-            if(variables[i]->getName() == name) {
-                return true;
-            }
-        }
-        return false;
-    }
-    size_t findVariable(const std::string& name) {
-        for(size_t i = 0; i < variables.size(); ++i) {
-            if(variables[i]->getName() == name) {
-                return i;
-            }
-        }
-        return npos;
-    }
+    bool hasVariable(const std::string& name);
+    size_t findVariable(const std::string& name);
 };
 
 

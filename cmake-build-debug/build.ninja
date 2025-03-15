@@ -55,8 +55,32 @@ build CMakeFiles/8_7_58rewrite.dir/main.cpp.o: CXX_COMPILER__8_7_58rewrite_unsca
   OBJECT_DIR = CMakeFiles/8_7_58rewrite.dir
   OBJECT_FILE_DIR = CMakeFiles/8_7_58rewrite.dir
 
+build CMakeFiles/8_7_58rewrite.dir/ExpressionTreePrint.cpp.o: CXX_COMPILER__8_7_58rewrite_unscanned_Debug /Users/fortisvariano/Documents/Data$ Structures/p2/Labs/8.7.58rewrite/ExpressionTreePrint.cpp || cmake_object_order_depends_target_8_7_58rewrite
+  DEP_FILE = CMakeFiles/8_7_58rewrite.dir/ExpressionTreePrint.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/8_7_58rewrite.dir
+  OBJECT_FILE_DIR = CMakeFiles/8_7_58rewrite.dir
+
 build CMakeFiles/8_7_58rewrite.dir/ConDec.cpp.o: CXX_COMPILER__8_7_58rewrite_unscanned_Debug /Users/fortisvariano/Documents/Data$ Structures/p2/Labs/8.7.58rewrite/ConDec.cpp || cmake_object_order_depends_target_8_7_58rewrite
   DEP_FILE = CMakeFiles/8_7_58rewrite.dir/ConDec.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/8_7_58rewrite.dir
+  OBJECT_FILE_DIR = CMakeFiles/8_7_58rewrite.dir
+
+build CMakeFiles/8_7_58rewrite.dir/Parser.cpp.o: CXX_COMPILER__8_7_58rewrite_unscanned_Debug /Users/fortisvariano/Documents/Data$ Structures/p2/Labs/8.7.58rewrite/Parser.cpp || cmake_object_order_depends_target_8_7_58rewrite
+  DEP_FILE = CMakeFiles/8_7_58rewrite.dir/Parser.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/8_7_58rewrite.dir
+  OBJECT_FILE_DIR = CMakeFiles/8_7_58rewrite.dir
+
+build CMakeFiles/8_7_58rewrite.dir/PostFix.cpp.o: CXX_COMPILER__8_7_58rewrite_unscanned_Debug /Users/fortisvariano/Documents/Data$ Structures/p2/Labs/8.7.58rewrite/PostFix.cpp || cmake_object_order_depends_target_8_7_58rewrite
+  DEP_FILE = CMakeFiles/8_7_58rewrite.dir/PostFix.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/8_7_58rewrite.dir
+  OBJECT_FILE_DIR = CMakeFiles/8_7_58rewrite.dir
+
+build CMakeFiles/8_7_58rewrite.dir/Expression.cpp.o: CXX_COMPILER__8_7_58rewrite_unscanned_Debug /Users/fortisvariano/Documents/Data$ Structures/p2/Labs/8.7.58rewrite/Expression.cpp || cmake_object_order_depends_target_8_7_58rewrite
+  DEP_FILE = CMakeFiles/8_7_58rewrite.dir/Expression.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/8_7_58rewrite.dir
   OBJECT_FILE_DIR = CMakeFiles/8_7_58rewrite.dir
@@ -69,7 +93,7 @@ build CMakeFiles/8_7_58rewrite.dir/ConDec.cpp.o: CXX_COMPILER__8_7_58rewrite_uns
 #############################################
 # Link the executable 8_7_58rewrite
 
-build 8_7_58rewrite: CXX_EXECUTABLE_LINKER__8_7_58rewrite_Debug CMakeFiles/8_7_58rewrite.dir/main.cpp.o CMakeFiles/8_7_58rewrite.dir/ConDec.cpp.o
+build 8_7_58rewrite: CXX_EXECUTABLE_LINKER__8_7_58rewrite_Debug CMakeFiles/8_7_58rewrite.dir/main.cpp.o CMakeFiles/8_7_58rewrite.dir/ExpressionTreePrint.cpp.o CMakeFiles/8_7_58rewrite.dir/ConDec.cpp.o CMakeFiles/8_7_58rewrite.dir/Parser.cpp.o CMakeFiles/8_7_58rewrite.dir/PostFix.cpp.o CMakeFiles/8_7_58rewrite.dir/Expression.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=13.5
   OBJECT_DIR = CMakeFiles/8_7_58rewrite.dir
   POST_BUILD = :

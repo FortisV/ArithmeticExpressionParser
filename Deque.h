@@ -2,6 +2,8 @@
 #define INC_8_7_58REWRITE_DEQUE_H
 
 
+#include <iostream>
+
 template<typename DataType>
 class DLNode {
 private:

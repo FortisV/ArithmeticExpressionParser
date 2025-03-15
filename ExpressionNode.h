@@ -56,7 +56,6 @@ private:
     ExpressionNode* operand;
 public:
     UnaryOperatorNode(const std::string& Operation) : operation(Operation), operand(nullptr) {}
-//    UnaryOperatorNode(const UnaryOperatorNode& unaryOperatorNode);
     ~UnaryOperatorNode() {
         delete operand;
     }
@@ -83,7 +82,6 @@ private:
     ExpressionNode* rOperand;
 public:
     BinaryOperatorNode(const std::string& Operation) : operation(Operation), lOperand(nullptr), rOperand(nullptr) {}
-//    BinaryOperatorNode(const BinaryOperatorNode& unaryOperatorNode);
     ~BinaryOperatorNode() {
         delete lOperand;
         delete rOperand;
@@ -119,42 +117,6 @@ public:
         return os << operation;
     }
 };
-
-//UnaryOperatorNode::UnaryOperatorNode(const UnaryOperatorNode &unaryOperatorNode)
-//        : operation(unaryOperatorNode.operation), operand(nullptr) {
-//    if(dynamic_cast<ConstantNode*>(unaryOperatorNode.operand)) {
-//        operand = new ConstantNode(*dynamic_cast<ConstantNode*>(unaryOperatorNode.operand));
-//    } else if(dynamic_cast<VariableNode*>(unaryOperatorNode.operand)) {
-//        operand = new VariableNode(*dynamic_cast<VariableNode*>(unaryOperatorNode.operand));
-//    } else if(dynamic_cast<UnaryOperatorNode*>(unaryOperatorNode.operand)) {
-//        operand = new UnaryOperatorNode(*dynamic_cast<UnaryOperatorNode*>(unaryOperatorNode.operand));
-//    } else if(dynamic_cast<BinaryOperatorNode*>(unaryOperatorNode.operand)) {
-//        operand = new BinaryOperatorNode(*dynamic_cast<BinaryOperatorNode*>(unaryOperatorNode.operand));
-//    }
-//}
-
-//BinaryOperatorNode::BinaryOperatorNode(const BinaryOperatorNode &binaryOperatorNode)
-//        : operation(binaryOperatorNode.operation), lOperand(nullptr), rOperand(nullptr) {
-//    if(dynamic_cast<ConstantNode*>(binaryOperatorNode.lOperand)) {
-//        lOperand = new ConstantNode(*dynamic_cast<ConstantNode*>(binaryOperatorNode.lOperand));
-//    } else if(dynamic_cast<VariableNode*>(binaryOperatorNode.lOperand)) {
-//        lOperand = new VariableNode(*dynamic_cast<VariableNode*>(binaryOperatorNode.lOperand));
-//    } else if(dynamic_cast<UnaryOperatorNode*>(binaryOperatorNode.lOperand)) {
-//        lOperand = new UnaryOperatorNode(*dynamic_cast<UnaryOperatorNode*>(binaryOperatorNode.lOperand));
-//    } else if(dynamic_cast<BinaryOperatorNode*>(binaryOperatorNode.lOperand)) {
-//        lOperand = new BinaryOperatorNode(*dynamic_cast<BinaryOperatorNode*>(binaryOperatorNode.lOperand));
-//    }
-//    if(dynamic_cast<ConstantNode*>(binaryOperatorNode.rOperand)) {
-//        rOperand = new ConstantNode(*dynamic_cast<ConstantNode*>(binaryOperatorNode.rOperand));
-//    } else if(dynamic_cast<VariableNode*>(binaryOperatorNode.rOperand)) {
-//        rOperand = new VariableNode(*dynamic_cast<VariableNode*>(binaryOperatorNode.rOperand));
-//    } else if(dynamic_cast<UnaryOperatorNode*>(binaryOperatorNode.rOperand)) {
-//        rOperand = new UnaryOperatorNode(*dynamic_cast<UnaryOperatorNode*>(binaryOperatorNode.rOperand));
-//    } else if(dynamic_cast<BinaryOperatorNode*>(binaryOperatorNode.rOperand)) {
-//        rOperand = new BinaryOperatorNode(*dynamic_cast<BinaryOperatorNode*>(binaryOperatorNode.rOperand));
-//    }
-//}
-
 
 
 #endif
