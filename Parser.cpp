@@ -31,7 +31,8 @@ Expression Parser::parse() {
     while(!postfix.empty()) {
         ExpressionNode* newNode;
         if(numNext()) {
-            newNode = new ConstantNode(std::stod(postfix.front().getValue()));
+            newNode = new
+                ConstantNode(std::stod(postfix.front().getValue()));
         } else if(varNext()) {
             newNode = newVariableNode(postfix.front());
         } else if(bopNext()) {

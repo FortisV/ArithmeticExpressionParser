@@ -32,7 +32,8 @@ private:
     BinaryOperatorNode* newBinaryOperatorNode(const Token& bop);
     UnaryOperatorNode* newUnaryOperatorNode(const Token& bop);
 public:
-    Parser(const Deque<Token>& Postfix) : postfix(Postfix), stack(), variables() {}
+    Parser(const Deque<Token>& Postfix) :
+    postfix(Postfix), stack(), variables() {}
     void reset(const Deque<Token>& Postfix) {
         postfix = Postfix;
         stack = Deque<ExpressionNode*>();

@@ -14,7 +14,8 @@ public:
     virtual std::ostream& print(std::ostream& os) const {
         return os;
     }
-    friend std::ostream& operator<<(std::ostream& os, const ExpressionNode& en) {
+    friend std::ostream& operator<<(std::ostream& os,
+            const ExpressionNode& en) {
         return en.print(os);
     }
 };
@@ -57,9 +58,13 @@ private:
     std::string operation;
     ExpressionNode* operand;
 public:
-    UnaryOperatorNode(const std::string& Operation) : operation(Operation), operand(nullptr) {}
-    UnaryOperatorNode(const UnaryOperatorNode& unaryOperatorNode) : operation(unaryOperatorNode.operation), operand(unaryOperatorNode.operand) {}
-    UnaryOperatorNode& operator=(const UnaryOperatorNode& unaryOperatorNode) {
+    UnaryOperatorNode(const std::string& Operation) :
+    operation(Operation), operand(nullptr) {}
+    UnaryOperatorNode(const UnaryOperatorNode& unaryOperatorNode) :
+    operation(unaryOperatorNode.operation),
+    operand(unaryOperatorNode.operand) {}
+    UnaryOperatorNode& operator=(const UnaryOperatorNode&
+            unaryOperatorNode) {
         if(this != &unaryOperatorNode) {
             delete operand;
             operation = unaryOperatorNode.operation;
@@ -95,9 +100,14 @@ private:
     ExpressionNode* lOperand;
     ExpressionNode* rOperand;
 public:
-    BinaryOperatorNode(const std::string& Operation) : operation(Operation), lOperand(nullptr), rOperand(nullptr) {}
-    BinaryOperatorNode(const BinaryOperatorNode& binaryOperatorNode) : operation(binaryOperatorNode.operation), lOperand(binaryOperatorNode.lOperand), rOperand(binaryOperatorNode.rOperand) {}
-    BinaryOperatorNode& operator=(const BinaryOperatorNode& binaryOperatorNode) {
+    BinaryOperatorNode(const std::string& Operation) :
+    operation(Operation), lOperand(nullptr), rOperand(nullptr) {}
+    BinaryOperatorNode(const BinaryOperatorNode& binaryOperatorNode) :
+    operation(binaryOperatorNode.operation),
+    lOperand(binaryOperatorNode.lOperand),
+    rOperand(binaryOperatorNode.rOperand) {}
+    BinaryOperatorNode& operator=(const BinaryOperatorNode&
+            binaryOperatorNode) {
         if(this != &binaryOperatorNode) {
             delete lOperand;
             delete rOperand;

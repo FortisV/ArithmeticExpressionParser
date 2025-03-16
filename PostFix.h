@@ -39,7 +39,8 @@ private:
 
     short precedence(Token op);
 public:
-    PostFix(const Deque<Token>& Infix) : infix(Infix), opStack(), postfixTokens() {}
+    PostFix(const Deque<Token>& Infix) :
+    infix(Infix), opStack(), postfixTokens() {}
     void reset(const Deque<Token>& Infix) {
         infix = Infix;
         opStack = Deque<Token>();

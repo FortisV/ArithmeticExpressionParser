@@ -100,8 +100,10 @@ int main() {
     Parser parser(postfixTokens);
     Expression expression = parser.parse();
     for(size_t i = 0; i < expression.getVariablesSize(); ++i) {
-        expression.setVariableValue(i, static_cast<double>(randomLong(-10,10)));
-        std::cout << expression.getVariableName(i) << " = " << expression.getVariableValue(i) << '\n';
+        expression.setVariableValue(i,
+                        static_cast<double>(randomLong(-10,10)));
+        std::cout << expression.getVariableName(i) << " = "
+                  << expression.getVariableValue(i) << '\n';
     }
 
     divider("Evaluation");

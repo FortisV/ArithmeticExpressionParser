@@ -4,7 +4,8 @@
 
 #include <string>
 
-enum TokenType {NONE, CONSTANT, VARIABLE, BINARY_OPERATOR, UNARY_OPERATOR, PARENTHESES};
+enum TokenType {NONE, CONSTANT, VARIABLE, BINARY_OPERATOR,
+        UNARY_OPERATOR, PARENTHESES};
 
 class Token {
 private:
@@ -13,7 +14,8 @@ private:
 public:
     Token() : type(NONE), value() {}
     Token(TokenType Type) : type(Type), value() {}
-    Token(TokenType Type, std::string Value) : type(Type), value(Value) {}
+    Token(TokenType Type, std::string Value) :
+    type(Type), value(Value) {}
 
     TokenType getType() const {
         return type;
@@ -24,7 +26,8 @@ public:
     std::ostream& print(std::ostream& os = std::cout) const {
         return os << value;
     }
-    friend std::ostream& operator<<(std::ostream& os, const Token& token) {
+    friend std::ostream& operator<<(std::ostream& os,
+            const Token& token) {
         return token.print(os);
     }
 };

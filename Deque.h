@@ -12,8 +12,10 @@ private:
     DataType data;
 public:
     DLNode() : prev(nullptr), next(nullptr), data() {}
-    DLNode(const DataType& Data) : prev(nullptr), next(nullptr), data(Data) {}
-    DLNode(const DLNode& dlNode) : prev(dlNode.prev), next(dlNode.next), data(dlNode.data) {}
+    DLNode(const DataType& Data) :
+    prev(nullptr), next(nullptr), data(Data) {}
+    DLNode(const DLNode& dlNode) :
+    prev(dlNode.prev), next(dlNode.next), data(dlNode.data) {}
     DLNode& operator=(const DLNode& dlNode) {
         if(this != &dlNode) {
             delete prev;
@@ -59,7 +61,8 @@ public:
     ~Deque() {
         destruct();
     }
-    Deque(const Deque<DataType>& deque) : Front(nullptr), Back(nullptr) {
+    Deque(const Deque<DataType>& deque) :
+    Front(nullptr), Back(nullptr) {
         DLNode<DataType>* curr = deque.Front;
         while(curr != nullptr) {
             push_back(curr->Data());
@@ -149,7 +152,8 @@ public:
         os << ']';
         return os;
     }
-    friend std::ostream& operator<<(std::ostream& os, const Deque<DataType>& deque) {
+    friend std::ostream& operator<<(std::ostream& os,
+            const Deque<DataType>& deque) {
         return deque.print(os);
     }
 };

@@ -70,7 +70,8 @@ void PostFix::postfix() {
             opStack.push_back(infix.front());
             infix.pop_front();
         } else if(cparNext()) {
-            while(!opStack.empty() && opStack.back().getType() != PARENTHESES) {
+            while(!opStack.empty() && opStack.back().getType() !=
+            PARENTHESES) {
                 postfixTokens.push_back(opStack.back());
                 opStack.pop_back();
             }

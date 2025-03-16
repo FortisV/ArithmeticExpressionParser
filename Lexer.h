@@ -82,7 +82,8 @@ private:
     }
 
 public:
-    Lexer(const std::string& Str) : str(Str), pos(0), prevOp(true), tokens() {}
+    Lexer(const std::string& Str) :
+    str(Str), pos(0), prevOp(true), tokens() {}
     void reset(const std::string& Str) {
         str = Str;
         pos = 0;

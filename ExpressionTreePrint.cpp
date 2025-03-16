@@ -41,18 +41,39 @@ void customPrintPreorder(ExpressionNode *root,
     }
 
     if(dynamic_cast<UnaryOperatorNode*>(root)) {
-        ExpressionNode* next = dynamic_cast<UnaryOperatorNode*>(root)->get();
+        ExpressionNode* next =
+                dynamic_cast<UnaryOperatorNode*>(root)->get();
         ln.push_back(false);
-        customPrintPreorder(next, ln, space, blank, line, branch, corner);
+        customPrintPreorder(next,
+                            ln,
+                            space,
+                            blank,
+                            line,
+                            branch,
+                            corner);
         ln.pop_back();
     } else if(dynamic_cast<BinaryOperatorNode*>(root)) {
-        ExpressionNode* lNext = dynamic_cast<BinaryOperatorNode*>(root)->getL();
-        ExpressionNode* rNext = dynamic_cast<BinaryOperatorNode*>(root)->getR();
+        ExpressionNode* lNext =
+                dynamic_cast<BinaryOperatorNode*>(root)->getL();
+        ExpressionNode* rNext =
+                dynamic_cast<BinaryOperatorNode*>(root)->getR();
         ln.push_back(true);
-        customPrintPreorder(lNext, ln, space, blank, line, branch, corner);
+        customPrintPreorder(lNext,
+                            ln,
+                            space,
+                            blank,
+                            line,
+                            branch,
+                            corner);
         ln.pop_back();
         ln.push_back(false);
-        customPrintPreorder(rNext, ln, space, blank, line, branch, corner);
+        customPrintPreorder(rNext,
+                            ln,
+                            space,
+                            blank,
+                            line,
+                            branch,
+                            corner);
         ln.pop_back();
     }
 }
