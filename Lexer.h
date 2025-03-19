@@ -26,11 +26,11 @@ private:
     }
     bool opNext() {
         return str[pos] == '+' ||
-        str[pos] == '-' ||
-        str[pos] == '*' ||
-        str[pos] == '/' ||
-        str[pos] == '%' ||
-        str[pos] == '^';
+               str[pos] == '-' ||
+               str[pos] == '*' ||
+               str[pos] == '/' ||
+               str[pos] == '%' ||
+               str[pos] == '^';
     }
     bool varNext() {
         return isalpha(str[pos]);
